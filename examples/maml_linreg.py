@@ -51,7 +51,13 @@ def main():
     )
 
     def meta_loss(weights, X_adapt, y_adapt, X_eval, y_eval):
-        adapted_weights = fast_adaptation(weights, mse_loss, model, X_adapt, y_adapt)
+        adapted_weights = fast_adaptation(
+            weights,
+            mse_loss,
+            model,
+            X_adapt,
+            y_adapt,
+        )
         eval_loss = mse_loss(adapted_weights, model, X_eval, y_eval)
         return eval_loss, eval_loss
     meta_grads = jax.jit(jax.grad(meta_loss, has_aux=True))

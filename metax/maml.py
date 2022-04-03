@@ -59,7 +59,7 @@ class GradientAdaptation:
 class FastAdaptationLoss:
 
     """
-    TODO: This doesn't support sampling different data
+    FIXME: This doesn't support sampling different data
           for adaptation and evaluation.
     """
 
